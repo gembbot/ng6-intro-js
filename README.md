@@ -5,6 +5,8 @@
 
 <h2>ng6-intro-js</h2>
 
+<img width="500" src="https://raw.githubusercontent.com/gembbot/ng6-intro-js/master/src/ng6-intro-js.png">
+
 
 Material 6+
 
