@@ -58,7 +58,7 @@ add to App.Component :
   <button Ng6IntroJs [step]="1" [text]="'info Btn Show Guid'">
   </code>
   
-  note : start Step from 0
+  <h2>start Step from 0</h2>
   
 
 <h3>use properties : </h3>
