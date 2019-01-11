@@ -1,0 +1,67 @@
+
+<div class="ngIntroJs" #ngIntroJs *ngIf="service.status && service.body[service.step]">
+  <div class="ngIntroJsData" #ngIntroJsData
+       [style.top.px]="service.body[service.step].top > h ? service.body[service.step].top-hData : service.body[service.step].top "
+       [style.left.px]="service.body[service.step].left > w ? service.body[service.step].left-300 : service.body[service.step].left+50">
+    <p>
+      {{service.body[service.step].text}}
+    </p>
+    <button *ngIf="isNextBackBtn" class="ngIntroJsBtn ngIntroJsBtnNext" [style.background-color]="option.nextBtn.color" (click)="service.step=service.step+1">{{option.nextBtn.text}}</button>
+    <button *ngIf="isNextBackBtn" class="ngIntroJsBtn ngIntroJsBtnBack" [style.background-color]="option.backBtn.color"  (click)="service.step=service.step-1">{{option.backBtn.text}}</button>
+    <button class="ngIntroJsBtn ngIntroJsBtnFinish" [style.background-color]="option.finishBtn.color"  (click)="stop()">{{option.finishBtn.text}}</button>
+  </div>
+  <div class="ngIntroJsCover"
+  [style.width.px]="service.body[service.step].width"
+  [style.height.px]="service.body[service.step].height"
+  [style.top.px]="service.body[service.step].top"
+  [style.left.px]="service.body[service.step].left"
+  ></div>
+</div>
+
+
+
+
+
+<style>
+  .ngIntroJsBtn{
+    border: 1px solid #d7d7d7;
+    padding: 6px 15px;
+    margin: 4px;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+  }
+  .ngIntroJsBtnNext{background-color: #a1ff8a}
+  .ngIntroJsBtnBack{background-color: #ff9795}
+  .ngIntroJsBtnFinish{background-color: #b9b2ff}
+  .ngIntroJs{
+    width: 100%;
+    height: 100%;
+    z-index: 10000000000000000000000000;
+    position: relative;
+    text-align: center;
+
+  }
+  .ngIntroJsData{
+    transition: ease-in 0.2s;
+    position: absolute;
+    top: 32px;
+    width: 300px;
+    left: 736px;
+    background: #fff;
+    z-index: 100000000000000000000000000;
+  }
+
+  .ngIntroJsCover{
+    transition: ease-in 0.2s;
+    position: absolute;
+    top: 7px;
+    left: 1041px;
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0px 0px 10px 5000px #00000073;
+    border-radius: 117px;
+  }
+
+</style>
